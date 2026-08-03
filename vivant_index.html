@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>自己紹介サイト</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: #111111;
+      color: #ffffff;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.6;
+    }
+
+    /* 固定ヘッダー */
+    header {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 50px;
+      background-color: rgba(0, 0, 0, 0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 15px;
+      z-index: 1000;
+      border-bottom: 1px solid #333;
+    }
+    .logo { font-weight: 900; font-size: 1.2rem; color: #e60012; }
+    nav ul { display: flex; list-style: none; gap: 12px; }
+    nav a { color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: bold; }
+
+    /* セクション */
+    section {
+      min-height: 100vh;
+      padding: 70px 15px 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .section-title { font-size: 2rem; font-weight: 900; color: #e60012; margin-bottom: 5px; letter-spacing: 2px; }
+    .section-subtitle { font-size: 0.9rem; color: #cccccc; margin-bottom: 25px; line-height: 1.5; }
+
+    /* １、表紙 (最上部) */
+    #cover {
+      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(17,17,17,0.8) 100%),
+                  url('./pins/Gemini_Generated_Image_11lyfh11lyfh11ly.png') center/cover no-repeat;
+      position: relative;
+    }
+    .hero-title { font-size: 3.5rem; font-weight: 900; color: #e60012; letter-spacing: 4px; text-transform: uppercase; }
+    .hero-sub { font-size: 1.1rem; margin-top: 10px; font-weight: bold; }
+
+    /* ２、NEXT ROTATION */
+    #yutori { background-color: #181818; }
+    .card-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
+    .banner-card {
+      background-color: #262626; border: 1px solid #333; border-radius: 6px; padding: 20px;
+      text-align: left; position: relative; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+    }
+    .banner-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background-color: #e60012; }
+    .banner-card h3 { font-size: 1.1rem; color: #fff; margin-bottom: 5px; }
+    .banner-card p { font-size: 0.85rem; color: #aaa; }
+
+    /* ３、人物紹介 */
+    #profile { background-color: #111111; width: 100%; }
+    .slider-wrapper { position: relative; width: 100%; max-width: 500px; margin: 0 auto; }
+    .slider-container {
+      display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
+      gap: 15px; padding-bottom: 15px; scrollbar-width: none; -ms-overflow-style: none;
+    }
+    .slider-container::-webkit-scrollbar { display: none; }
+    .profile-card { flex: 0 0 100%; scroll-snap-align: center; background: #1f1f1f; border-radius: 8px; overflow: hidden; border: 1px solid #333; }
+    .profile-info { padding: 25px 20px; background-color: #e60012; color: #ffffff; text-align: center; }
+    .profile-name { font-size: 1.6rem; font-weight: bold; }
+    .profile-role { font-size: 0.85rem; opacity: 0.9; margin-top: 5px; border-bottom: 1px solid rgba(255,255,255,0.3); padding-bottom: 8px; }
+
+    .nav-arrow {
+      position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6);
+      color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
+      justify-content: center; text-decoration: none; font-size: 1.2rem; z-index: 10; border: 1px solid #555;
+    }
+    .nav-arrow.left { left: -10px; }
+    .nav-arrow.right { right: -10px; }
+
+    .btn-all-members {
+      display: inline-block; margin-top: 25px; padding: 12px 30px; background-color: #e60012;
+      color: #ffffff; font-weight: bold; font-size: 0.95rem; text-decoration: none; border-radius: 4px;
+    }
+
+    footer { background-color: #000; text-align: center; padding: 15px; font-size: 0.75rem; color: #666; }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">PORTFOLIO</div>
+    <nav>
+      <ul>
+        <li><a href="#cover">TITLE</a></li>
+        <li><a href="#yutori">NEWS</a></li>
+        <li><a href="#profile">人物紹介</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- １、表紙 -->
+  <section id="cover">
+    <h1 class="hero-title">Soda!</h1>
+    <p class="hero-sub">OFFICIAL PORTFOLIO</p>
+  </section>
+
+  <!-- ２、NEXT ROTATION -->
+  <section id="yutori">
+    <h2 class="section-title">NEW ROTATION</h2>
+    <div class="section-subtitle">第3ローテ 2026.8.3<br>NOW HERE</div>
+    <div class="card-container">
+      <div class="banner-card">
+        <h3>新ローテメンバー発表！</h3>
+        <p>ここに詳細や新しいメンバーに関する告知テキストが入ります。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ３、人物紹介 -->
+  <section id="profile">
+    <h2 class="section-title">CHARACTER</h2>
+    <p class="section-subtitle">登場人物</p>
+
+    <div class="slider-wrapper">
+      <a href="#p1" class="nav-arrow left">&lt;</a>
+      <a href="#p2" class="nav-arrow right">&gt;</a>
+
+      <div class="slider-container">
+        <div class="profile-card" id="p1"><div class="profile-info"><div class="profile-name">北村 祐人</div><div class="profile-role">ローテ最長身</div></div></div>
+        <div class="profile-card" id="p2"><div class="profile-info"><div class="profile-name">中澤 陽</div><div class="profile-role">半分フランス人</div></div></div>
+        <div class="profile-card" id="p3"><div class="profile-info"><div class="profile-name">永原 香奈</div><div class="profile-role">No image 随時更新</div></div></div>
+        <div class="profile-card" id="p4"><div class="profile-info"><div class="profile-name">海野 凛生</div><div class="profile-role">No image 随時更新</div></div></div>
+      </div>
+    </div>
+
+    <a href="detail.html" class="btn-all-members">すべての登場人物 ➔</a>
+  </section>
+
+  <footer>&copy; 2026 MY PORTFOLIO. All Rights Reserved.</footer>
+
+  <!-- 読み込み時に強制的にハッシュ(#)をリセットし表紙へスクロールさせるスクリプト -->
+  <script>
+    if (window.location.hash) {
+      history.replaceState(null, null, window.location.pathname);
+    }
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        window.scrollTo(0, 0);
+      }, 10);
+    });
+  </script>
+</body>
+</html>
