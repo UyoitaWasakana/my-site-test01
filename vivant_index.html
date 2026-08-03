@@ -44,15 +44,15 @@
     .section-title { font-size: 2rem; font-weight: 900; color: #e60012; margin-bottom: 5px; letter-spacing: 2px; }
     .section-subtitle { font-size: 0.9rem; color: #cccccc; margin-bottom: 25px; line-height: 1.5; }
 
-    /* １、表紙 (ポスター画像をそのまま全画面表示) */
+    /* １、表紙 */
     #cover {
       position: relative;
-      padding: 50px 0 0; /* ヘッダー分のみ空ける */
+      padding: 50px 0 0;
       background-color: #000000;
     }
     .cover-img {
       width: 100%;
-      max-width: 600px; /* スマホ画面に最適化 */
+      max-width: 600px;
       height: auto;
       display: block;
       margin: 0 auto;
@@ -86,6 +86,7 @@
       position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.6);
       color: #fff; width: 36px; height: 36px; border-radius: 50%; display: flex; align-items: center;
       justify-content: center; text-decoration: none; font-size: 1.2rem; z-index: 10; border: 1px solid #555;
+      cursor: pointer;
     }
     .nav-arrow.left { left: -10px; }
     .nav-arrow.right { right: -10px; }
@@ -111,9 +112,9 @@
     </nav>
   </header>
 
-  <!-- １、表紙 (文字無し・VIVANT_0803.jpgを直貼り) -->
+  <!-- １、表紙 -->
   <section id="cover">
-    <img src="./VIVANT_0803.png" alt="新人研修 Soda!" class="cover-img">
+    <img src="./vivant-final.png" alt="新人研修 Soda!" class="cover-img">
   </section>
 
   <!-- ２、NEXT ROTATION -->
@@ -134,17 +135,20 @@
     <p class="section-subtitle">登場人物</p>
 
     <div class="slider-wrapper">
-      <a href="#p1" class="nav-arrow left">&lt;</a>
-      <a href="#p2" class="nav-arrow right">&gt;</a>
+      <!-- 左右矢印ボタン（1枚ずつ移動する処理を記述） -->
+      <a href="javascript:void(0)" class="nav-arrow left" onclick="slideProfiles(-1)">&lt;</a>
+      <a href="javascript:void(0)" class="nav-arrow right" onclick="slideProfiles(1)">&gt;</a>
 
       <div class="slider-container">
-        <div class="profile-card" id="p1"><div class="profile-info"><div class="profile-name">北村 祐人</div><div class="profile-role">丸菱商事・エネルギー事業部</div></div></div>
-        <div class="profile-card" id="p2"><div class="profile-info"><div class="profile-name">中澤 陽</div><div class="profile-role">警視庁公安部・外事第4課</div></div></div>
-        <div class="profile-card" id="p3"><div class="profile-info"><div class="profile-name">早川 実友</div><div class="profile-role">医師</div></div></div>
-        <div class="profile-card" id="p4"><div class="profile-info"><div class="profile-name">小谷野 夏菜</div><div class="profile-role">プロモーション</div></div></div>
-        <div class="profile-card" id="p5"><div class="profile-info"><div class="profile-name">山下 眞奈</div><div class="profile-role">博報堂 CABIN</div></div></div>
-        <div class="profile-card" id="p6"><div class="profile-info"><div class="profile-name">滝口 友香</div><div class="profile-role">P1 高木チーム</div></div></div>
-        <div class="profile-card" id="p7"><div class="profile-info"><div class="profile-name">傍田 茉央</div><div class="profile-role">P1 島瀬チーム</div></div></div>
+        <div class="profile-card" id="p1"><div class="profile-info"><div class="profile-name">北村 祐人</div><div class="profile-role">ローテメンバー最長身177cm</div></div></div>
+        <div class="profile-card" id="p2"><div class="profile-info"><div class="profile-name">中澤 陽</div><div class="profile-role">半分フランス人</div></div></div>
+        <div class="profile-card" id="p3"><div class="profile-info"><div class="profile-name">早川 実友</div><div class="profile-role">ローテ唯一のエディター</div></div></div>
+        <div class="profile-card" id="p4"><div class="profile-info"><div class="profile-name">小谷野 夏菜</div><div class="profile-role">レゴ職人</div></div></div>
+        <div class="profile-card" id="p5"><div class="profile-info"><div class="profile-name">山下 眞奈</div><div class="profile-role">白馬村から来た村人</div></div></div>
+        <div class="profile-card" id="p6"><div class="profile-info"><div class="profile-name">滝口 友香</div><div class="profile-role">はんなり京都人</div></div></div>
+        <div class="profile-card" id="p7"><div class="profile-info"><div class="profile-name">傍田 茉央</div><div class="profile-role">ローテのお日さまニコニコガール</div></div></div>
+      </div>
+
       </div>
     </div>
 
@@ -153,8 +157,19 @@
 
   <footer>&copy; 2026 MY PORTFOLIO. All Rights Reserved.</footer>
 
-  <!-- 読み込み時に表紙へスクロールさせるスクリプト -->
+  <!-- スクリプト類 -->
   <script>
+    // 矢印ボタンで1枚ずつスムーズにスクロールさせる関数
+    function slideProfiles(direction) {
+      const container = document.querySelector('.slider-container');
+      const cardWidth = container.querySelector('.profile-card').offsetWidth + 15; // カード幅 + gap
+      container.scrollBy({
+        left: cardWidth * direction,
+        behavior: 'smooth'
+      });
+    }
+
+    // 読み込み時に表紙へスクロールさせる処理
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname);
     }
