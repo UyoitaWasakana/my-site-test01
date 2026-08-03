@@ -31,10 +31,10 @@
     nav ul { display: flex; list-style: none; gap: 12px; }
     nav a { color: #ffffff; text-decoration: none; font-size: 0.75rem; font-weight: bold; }
 
-    /* セクション */
+    /* 各セクション */
     section {
       min-height: 100vh;
-      padding: 70px 15px 40px;
+      padding: 50px 0 40px;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -44,17 +44,22 @@
     .section-title { font-size: 2rem; font-weight: 900; color: #e60012; margin-bottom: 5px; letter-spacing: 2px; }
     .section-subtitle { font-size: 0.9rem; color: #cccccc; margin-bottom: 25px; line-height: 1.5; }
 
-    /* １、表紙 (最上部) */
+    /* １、表紙 (ポスター画像をそのまま全画面表示) */
     #cover {
-      background: linear-gradient(180deg, rgba(0,0,0,0.3) 0%, rgba(17,17,17,0.8) 100%),
-                  url('./pins/Gemini_Generated_Image_11lyfh11lyfh11ly.png') center/cover no-repeat;
       position: relative;
+      padding: 50px 0 0; /* ヘッダー分のみ空ける */
+      background-color: #000000;
     }
-    .hero-title { font-size: 3.5rem; font-weight: 900; color: #e60012; letter-spacing: 4px; text-transform: uppercase; }
-    .hero-sub { font-size: 1.1rem; margin-top: 10px; font-weight: bold; }
+    .cover-img {
+      width: 100%;
+      max-width: 600px; /* スマホ画面に最適化 */
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
 
     /* ２、NEXT ROTATION */
-    #yutori { background-color: #181818; }
+    #yutori { background-color: #181818; padding: 70px 15px 40px; }
     .card-container { width: 100%; max-width: 500px; display: flex; flex-direction: column; gap: 15px; }
     .banner-card {
       background-color: #262626; border: 1px solid #333; border-radius: 6px; padding: 20px;
@@ -65,7 +70,7 @@
     .banner-card p { font-size: 0.85rem; color: #aaa; }
 
     /* ３、人物紹介 */
-    #profile { background-color: #111111; width: 100%; }
+    #profile { background-color: #111111; width: 100%; padding: 70px 15px 40px; }
     .slider-wrapper { position: relative; width: 100%; max-width: 500px; margin: 0 auto; }
     .slider-container {
       display: flex; overflow-x: auto; scroll-snap-type: x mandatory; scroll-behavior: smooth;
@@ -106,15 +111,14 @@
     </nav>
   </header>
 
-  <!-- １、表紙 -->
+  <!-- １、表紙 (文字無し・VIVANT_0803.jpgを直貼り) -->
   <section id="cover">
-    <h1 class="hero-title">Soda!</h1>
-    <p class="hero-sub">OFFICIAL PORTFOLIO</p>
+    <img src="./VIVANT_0803.png" alt="新人研修 Soda!" class="cover-img">
   </section>
 
   <!-- ２、NEXT ROTATION -->
   <section id="yutori">
-    <h2 class="section-title">NEW ROTATION</h2>
+    <h2 class="section-title">NEXT ROTATION</h2>
     <div class="section-subtitle">第3ローテ 2026.8.3<br>NOW HERE</div>
     <div class="card-container">
       <div class="banner-card">
@@ -134,10 +138,13 @@
       <a href="#p2" class="nav-arrow right">&gt;</a>
 
       <div class="slider-container">
-        <div class="profile-card" id="p1"><div class="profile-info"><div class="profile-name">北村 祐人</div><div class="profile-role">ローテ最長身</div></div></div>
-        <div class="profile-card" id="p2"><div class="profile-info"><div class="profile-name">中澤 陽</div><div class="profile-role">半分フランス人</div></div></div>
-        <div class="profile-card" id="p3"><div class="profile-info"><div class="profile-name">永原 香奈</div><div class="profile-role">No image 随時更新</div></div></div>
-        <div class="profile-card" id="p4"><div class="profile-info"><div class="profile-name">海野 凛生</div><div class="profile-role">No image 随時更新</div></div></div>
+        <div class="profile-card" id="p1"><div class="profile-info"><div class="profile-name">北村 祐人</div><div class="profile-role">丸菱商事・エネルギー事業部</div></div></div>
+        <div class="profile-card" id="p2"><div class="profile-info"><div class="profile-name">中澤 陽</div><div class="profile-role">警視庁公安部・外事第4課</div></div></div>
+        <div class="profile-card" id="p3"><div class="profile-info"><div class="profile-name">早川 実友</div><div class="profile-role">医師</div></div></div>
+        <div class="profile-card" id="p4"><div class="profile-info"><div class="profile-name">小谷野 夏菜</div><div class="profile-role">プロモーション</div></div></div>
+        <div class="profile-card" id="p5"><div class="profile-info"><div class="profile-name">山下 眞奈</div><div class="profile-role">博報堂 CABIN</div></div></div>
+        <div class="profile-card" id="p6"><div class="profile-info"><div class="profile-name">滝口 友香</div><div class="profile-role">P1 高木チーム</div></div></div>
+        <div class="profile-card" id="p7"><div class="profile-info"><div class="profile-name">傍田 茉央</div><div class="profile-role">P1 島瀬チーム</div></div></div>
       </div>
     </div>
 
@@ -146,7 +153,7 @@
 
   <footer>&copy; 2026 MY PORTFOLIO. All Rights Reserved.</footer>
 
-  <!-- 読み込み時に強制的にハッシュ(#)をリセットし表紙へスクロールさせるスクリプト -->
+  <!-- 読み込み時に表紙へスクロールさせるスクリプト -->
   <script>
     if (window.location.hash) {
       history.replaceState(null, null, window.location.pathname);
