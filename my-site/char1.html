@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>乃木 憂助 | CHARACTER</title>
+  <title>北村 祐人 | CHARACTER</title>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       background-color: #0d0d0d; color: #ffffff;
       font-family: "Helvetica Neue", Arial, sans-serif;
-      line-height: 1.6; padding: 70px 20px 40px;
+      line-height: 1.6; padding: 70px 15px 40px;
       display: flex; flex-direction: column; align-items: center; min-height: 100vh;
     }
     header {
@@ -17,24 +17,26 @@
       background-color: rgba(0, 0, 0, 0.9); display: flex; align-items: center; padding: 0 15px; z-index: 1000; border-bottom: 1px solid #333;
     }
     .logo { font-weight: 900; font-size: 1.2rem; color: #e60012; }
+    
     .detail-card {
       width: 100%; max-width: 500px; background-color: #1a1a1a;
       border: 1px solid #333; border-radius: 8px; overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
     }
-    .detail-img { width: 100%; height: 250px; background-color: #333; background-size: cover; background-position: center; }
-    .detail-content { padding: 25px; }
-    .char-title { font-size: 1.8rem; font-weight: 900; color: #e60012; }
-    .char-sub { font-size: 0.85rem; color: #aaa; margin-bottom: 15px; border-bottom: 1px solid #333; padding-bottom: 8px; }
-    .info-section { margin-bottom: 15px; }
-    .info-label { font-size: 0.8rem; color: #e60012; font-weight: bold; }
-    .info-text { font-size: 0.95rem; color: #ddd; }
-    .btn-group { display: flex; gap: 10px; margin-top: 25px; }
+    /* 画像を前面にフル表示 */
+    .detail-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    
+    .btn-group { display: flex; gap: 10px; padding: 20px; background-color: #141414; }
     .btn-link {
-      flex: 1; text-align: center; padding: 10px 0; background-color: #222;
-      color: #fff; text-decoration: none; font-size: 0.8rem; border-radius: 4px; border: 1px solid #444;
-      transition: background 0.2s;
+      flex: 1; text-align: center; padding: 12px 0; background-color: #222;
+      color: #fff; text-decoration: none; font-size: 0.85rem; font-weight: bold;
+      border-radius: 4px; border: 1px solid #444; transition: background 0.2s;
     }
-    .btn-link:hover { background-color: #e60012; }
+    .btn-link:hover { background-color: #e60012; border-color: #e60012; }
   </style>
 </head>
 <body>
@@ -42,26 +44,12 @@
   <header><div class="logo">PORTFOLIO</div></header>
 
   <div class="detail-card">
-    <div class="detail-img" style="background-image: url('https://via.placeholder.com/500x300/333/fff?text=Photo+1');"></div>
-    <div class="detail-content">
-      <h1 class="char-title">乃木 憂助</h1>
-      <p class="char-sub">NOGI YUSUKE / 堺 雅人</p>
-
-      <div class="info-section">
-        <div class="info-label">所属・肩書き</div>
-        <div class="info-text">丸菱商事・エネルギープラント事業部2課 課長</div>
-      </div>
-
-      <div class="info-section">
-        <div class="info-label">人物概要</div>
-        <div class="info-text">ここに詳しいプロフィール・自己紹介テキストが入ります。</div>
-      </div>
-
-      <div class="btn-group">
-        <!-- (3')を削除し「← 一覧へ戻る」に修正 -->
-        <a href="detail.html" class="btn-link">← 一覧へ戻る</a>
-        <a href="vivant_index.html" class="btn-link">トップへ戻る</a>
-      </div>
+    <!-- chara-pins フォルダ内の 01.jpg を表示 -->
+    <img src="./chara-pins/01.png" alt="北村 祐人" class="detail-img">
+    
+    <div class="btn-group">
+      <a href="detail.html" class="btn-link">← 一覧へ戻る</a>
+      <a href="index.html" class="btn-link">トップへ戻る</a>
     </div>
   </div>
 

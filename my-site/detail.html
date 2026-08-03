@@ -20,7 +20,6 @@
     .page-title { font-size: 2.2rem; font-weight: 900; color: #e60012; letter-spacing: 2px; }
     .page-sub { font-size: 0.85rem; color: #aaa; }
 
-    /* 3列×3列グリッド */
     .character-grid {
       width: 100%; max-width: 500px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
     }
@@ -29,10 +28,9 @@
       display: flex; flex-direction: column; align-items: center; text-decoration: none; transition: transform 0.2s, border-color 0.2s;
     }
     .char-card:hover { transform: translateY(-3px); border-color: #e60012; }
-    .char-thumb { width: 100%; aspect-ratio: 3/4; background-color: #333; background-size: cover; background-position: center; }
+    .char-thumb { width: 100%; aspect-ratio: 16/9; background-color: #333; background-size: cover; background-position: center; }
     .char-meta { padding: 8px 4px; text-align: center; width: 100%; }
     .char-name { font-size: 0.75rem; font-weight: bold; color: #ffffff; line-height: 1.2; }
-    .char-actor { font-size: 0.65rem; color: #aaa; margin-top: 2px; }
 
     .btn-back {
       margin-top: 35px; padding: 10px 25px; background-color: #222; color: #fff;
@@ -46,50 +44,41 @@
 
   <div class="title-area">
     <h1 class="page-title">CHARACTER</h1>
-    <p class="page-sub">登場人物一覧 (人物を選択してください)</p>
+    <p class="page-sub">登場人物一覧</p>
   </div>
 
-  <!-- 9人のグリッド（クリックで個別ページ『4』へ遷移） -->
   <div class="character-grid">
     <a href="char1.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=1');"></div>
-      <div class="char-meta"><div class="char-name">乃木 憂助</div><div class="char-actor">堺 雅人</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/01.png');"></div>
+      <div class="char-meta"><div class="char-name">北村 祐人</div></div>
     </a>
     <a href="char2.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=2');"></div>
-      <div class="char-meta"><div class="char-name">野崎 守</div><div class="char-actor">阿部 寛</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/02.png');"></div>
+      <div class="char-meta"><div class="char-name">中澤 陽</div></div>
     </a>
     <a href="char3.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=3');"></div>
-      <div class="char-meta"><div class="char-name">ノコル</div><div class="char-actor">二宮 和也</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/03.png');"></div>
+      <div class="char-meta"><div class="char-name">早川 実友</div></div>
     </a>
     <a href="char4.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=4');"></div>
-      <div class="char-meta"><div class="char-name">黒須 駿</div><div class="char-actor">松坂 桃李</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/04.png');"></div>
+      <div class="char-meta"><div class="char-name">小谷野 夏菜</div></div>
     </a>
     <a href="char5.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=5');"></div>
-      <div class="char-meta"><div class="char-name">柚木 薫</div><div class="char-actor">二階堂ふみ</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/05.png');"></div>
+      <div class="char-meta"><div class="char-name">山下 眞奈</div></div>
     </a>
     <a href="char6.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=6');"></div>
-      <div class="char-meta"><div class="char-name">佐野 雄太郎</div><div class="char-actor">坂東 彌十郎</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/06.png');"></div>
+      <div class="char-meta"><div class="char-name">滝口 友香</div></div>
     </a>
     <a href="char7.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=7');"></div>
-      <div class="char-meta"><div class="char-name">新庄 浩太郎</div><div class="char-actor">竜星 涼</div></div>
-    </a>
-    <a href="char8.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=8');"></div>
-      <div class="char-meta"><div class="char-name">長野 利彦</div><div class="char-actor">小日向文世</div></div>
-    </a>
-    <a href="char9.html" class="char-card">
-      <div class="char-thumb" style="background-image: url('https://via.placeholder.com/150x200/333/fff?text=9');"></div>
-      <div class="char-meta"><div class="char-name">東条 翔太</div><div class="char-actor">濱田 岳</div></div>
+      <div class="char-thumb" style="background-image: url('./chara-pins/07.png');"></div>
+      <div class="char-meta"><div class="char-name">傍田 茉央</div></div>
     </a>
   </div>
 
-  <a href="vivant_index.html#profile" class="btn-back">← トップページに戻る</a>
+  <a href="vivant_index.html" class="btn-back">← トップページに戻る</a>
 
 </body>
 </html>
